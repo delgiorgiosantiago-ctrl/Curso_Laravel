@@ -3,10 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Testing\Fluent\Concerns\Has;
 
-class profile extends Model
+class Category extends Model
 {
+    //
 
     protected $guarded = [
         'id',
@@ -14,9 +14,9 @@ class profile extends Model
         'updated_at'    
     ];
 
-    //Relacion de uno a uno inversa
-    public function user()
+    //Relacion de uno a muchos (Article - Category)
+    public function articles()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Article::class);
     }
 }

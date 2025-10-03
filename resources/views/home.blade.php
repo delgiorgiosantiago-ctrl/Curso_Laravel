@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ var_dump ($articles) }}
                 </div>
             </div>
         </div>

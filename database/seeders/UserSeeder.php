@@ -20,13 +20,13 @@ class UserSeeder extends Seeder
             'full_name' => 'Santiago',
             'email' => 'santiago@gmail.com',
             'password' => Hash::make('12345678'),
-       ]);
+       ])->assignRole('Administrator');
 
        User::create([
             'full_name' => 'Tomás',
             'email' => 'tomas@gmail.com',
             'password' => Hash::make('12345678'),
-       ]);
+       ])->assignRole('Author');
 
        User::factory(10)->create();
     }

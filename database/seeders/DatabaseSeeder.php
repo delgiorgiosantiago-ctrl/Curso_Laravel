@@ -26,9 +26,11 @@ class DatabaseSeeder extends Seeder
         Storage::makeDirectory('categories');
 
         //Llamar al seeder
+        $this->call(RoleSeeder::class);
         $this->call([
             UserSeeder::class,
         ]);
+        
 
         //Factories
         Category::factory(8)->create();

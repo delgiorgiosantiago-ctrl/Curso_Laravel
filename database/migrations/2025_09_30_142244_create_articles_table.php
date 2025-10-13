@@ -8,8 +8,10 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->id();
@@ -19,26 +21,31 @@ return new class extends Migration
             $table->string('image', 255);
             $table->text('body');
             $table->boolean('status')->default(0);
-            // Relación con usuario
+
+            //Relación con usuario
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
                 ->onDelete('set null');
-            // Relación con categoría
+
+            //Relación con categoría
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')
                 ->references('id')
                 ->on('categories')
-                ->onDelete('cascade');
+                ->onDelete('set null');
+
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('articles');
     }

@@ -262,18 +262,28 @@ return [
             'route'=> 'articles.index',
             'icon' => 'fas fa-poll',
             'active' => ['admin/articles*'],
+            'can'  => 'articles.index',
         ],
         [
             'text' => 'Categorías',
             'route'=> 'categories.index',
             'icon' => 'fas fa-poll',
             'active' => ['admin/categories*'],
+            'can'  => 'categories.index',
         ],
         [
             'text' => 'Comentarios',
             'route'=> 'comments.index',
             'icon' => 'fas fa-poll',
             'active' => ['admin/comments*'],
+            'can'  => 'comments.index',
+        ],
+        [
+            'text' => 'Usuarios',
+            'route'=> 'users.index',
+            'icon' => 'fas fa-poll',
+            'active' => ['admin/users*'],
+            'can'  => 'users.index',
         ],
 
         

@@ -31,9 +31,14 @@ Route::namespace('App\Http\Controllers')->prefix('admin')->group(function() {
                 ->names('categories');
 
     //Comentarios
-    Route::resource('comments', 'CommentController')
+        Route::resource('comments', 'CommentController')
                 ->only('index', 'destroy')
                 ->names('comments'); 
+
+    //Usuarios
+        Route::resource('users', 'UserController')
+                ->except('create', 'store', 'show')
+                ->names('users');
 
 });
 
